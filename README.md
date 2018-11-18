@@ -1,7 +1,7 @@
 Cryptocare integration/staging tree
 ================================
 
-http://www.cryptocare.org
+http://www.cryptocare.in
 
 Copyright (c) 2009-2014 Bitcoin Developers
 Copyright (c) 2011-2014 Litecoin Developers
