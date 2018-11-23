@@ -35,7 +35,7 @@ CTxMemPool mempool;
 unsigned int nTransactionsUpdated = 0;
 
 map<uint256, CBlockIndex*> mapBlockIndex;
-uint256 hashGenesisBlock("0x14d576178a01f284c75d6dc1a1b8c8e2fa11086a677fd65b16cc4adb344287b2");
+uint256 hashGenesisBlock("0x9b0863362fdbc4a199191feaca0017b6fd7e6487e210e4192cb0febc75cec001");
 static CBigNum bnProofOfWorkLimit(~uint256(0) >> 20); // Cryptocare: starting difficulty is 1 / 2^12
 CBlockIndex* pindexGenesisBlock = NULL;
 int nBestHeight = -1;
@@ -2746,7 +2746,7 @@ bool LoadBlockIndex()
         pchMessageStart[1] = 0xf1;
         pchMessageStart[2] = 0xde;
         pchMessageStart[3] = 0xc8;
-        hashGenesisBlock = uint256("0xb2e825fe96c3e0ae22eeda2ad37328424defa0fa493afedab0d5705c8ab31305");
+        hashGenesisBlock = uint256("0x1d73c46fe75575ba6440aca35b734dcb975aafe44f4f71a6836de125461ba461");
     }
 
     //
@@ -2779,7 +2779,7 @@ bool InitBlockIndex() {
         //   vMerkleTree: 97ddfbbae6
 
         // Genesis block
-        const char* pszTimestamp = "Indian Express, Pope Francis says world must not turn a blind eye to migrants, 18/Nov/2018";
+        const char* pszTimestamp = "Turkish paper,CIA had recording of Saudi prince demanding Khashoggi be silenced,23/Nov/2018";
         CTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
@@ -2791,23 +2791,22 @@ bool InitBlockIndex() {
         block.hashPrevBlock = 0;
         block.hashMerkleRoot = block.BuildMerkleTree();
         block.nVersion = 1;
-        block.nTime    = 1542558319;
+        block.nTime    = 1542992844;
         block.nBits    = 0x1e0ffff0;
-        block.nNonce   = 2084525644;
+        block.nNonce   = 2087288935;
 
         if (fTestNet)
         {
-            block.nTime    = 1542558305;
-            block.nNonce   = 385405635;
+            block.nTime    = 1542992831;
+            block.nNonce   = 385911585;
         }
-
 
         //// debug print
         uint256 hash = block.GetHash();
         printf("%s\n", hash.ToString().c_str());
         printf("%s\n", hashGenesisBlock.ToString().c_str());
         printf("%s\n", block.hashMerkleRoot.ToString().c_str());
-        assert(block.hashMerkleRoot == uint256("0x05e1d9f0fb9325fd033f861b6d48a6ce5fb9a6f50014d9098037280c03553d06"));
+        assert(block.hashMerkleRoot == uint256("0xbff382c14c3239ba723c1d3627182fe108fed12d154fb405f49635ac7401e1cd"));
         block.print();
         assert(hash == hashGenesisBlock);
 
